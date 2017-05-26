@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import List from './List/List';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <header>
+          <h1>TV Shows</h1>
+        </header>
+        
+        <List title='OnAir' items={[1, 2, 3, 4]} />
+        <List title='Add Show' items={[1, 2, 3, 4]} />
       </div>
     );
   }

@@ -1,5 +1,39 @@
+:root {
+  /* Material colors */
+    /* Grey */
+  --clr-grey-50: #fafafa;
+  --clr-grey-800: #424242;
+    /* Purple */
+  --clr-purple-100: #e1bee7;
+
+  /* App colors */
+  --color-primary: var(--clr-grey-800);
+  --color-secondary: var(--clr-purple-100);
+  --color-body: var(--clr-grey-50);
+  --color-border: var(--color-secondary);
+
+  /* Border radius */
+  --border-radius-s: 3px;
+  --border-radius-m: 5px;
+  --border-radius-l: 7px;
+  --border-radius-full: 100%;
+
+  /* Transition */
+  --transition-duration: .16s;
+  --transition-function: easy-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  min-width: 320px;
+
+  color: var(--color-primary);
+
+  background-color: var(--color-body);
+
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
 }
