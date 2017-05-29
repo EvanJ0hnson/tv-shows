@@ -1,12 +1,20 @@
 import React from 'react';
 
+import Show from '../Show/Show';
+
+import './List.css'
+
 function List({ items, emptyMessage = 'Empty List' }) {
   const listItems = items.length
-    ? items.map(x => <li key={x.title}>{x.title}</li>)
+    ? items.map(item =>
+        <li className="list__item" key={item.title}>
+          <Show item={item} />
+        </li>
+      )
     : <p>{emptyMessage}</p>;
 
   return (
-    <ul>
+    <ul className="list">
       {listItems}
     </ul>
   );
