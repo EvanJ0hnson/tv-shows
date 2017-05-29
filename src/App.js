@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import List from './List/List';
+import AddShow from './AddShow/AddShow';
+import OnAir from './OnAir/OnAir';
+
 import './App.css';
 
 class App extends Component {
@@ -10,9 +12,15 @@ class App extends Component {
         <header>
           <h1>TV Shows</h1>
         </header>
-        
-        <List title='OnAir' items={[1, 2, 3, 4]} />
-        <List title='Add Show' items={[1, 2, 3, 4]} />
+
+        <main>
+          <OnAir />
+          <AddShow />
+        </main>
+
+        <footer>
+          <h6>Ivan Gerasimov, <a href="https://gerasimov.pw">gerasimov.pw</a></h6>  
+        </footer>
       </div>
     );
   }
