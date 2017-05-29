@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import List from './List';
+import SearchableList from './SearchableList';
 
 const items = [{
   title: 'Item 1',
@@ -15,7 +15,7 @@ const items = [{
   next: 'next',
 }];
 
-it('<List> renders without crashing', () => {
+it('<SearchableList> renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<List items={items} />, div);
+  ReactDOM.render(<SearchableList items={items} />, div);
 });
