@@ -12,7 +12,7 @@ function Show({ item }) {
       <main>
         <img
           className="tv-show-card__poster"
-          src="assets/images/the-100-poster-1.jpg"
+          src={item.image}
           alt={`Poster: ${item.title}`}
           width="85px"
           height="125px"
@@ -26,7 +26,10 @@ function Show({ item }) {
         <p>
           <span>Next Episode:</span> {item.prev}
         </p>
-        <button className="tv-show-card__button">+</button>
+        <button
+          className="tv-show-card__button"
+          title={`Add ${item.title} to the list`}
+        >+</button>
       </main>
     </div>
   )
