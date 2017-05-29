@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    const { title, items } = this.props;
-    return (
-      <section>
-        <header>
-          <h2>{ title }</h2>  
-        </header>
-        <main>
-          { items.map(x => `item ${x} `) }
-        </main>
-      </section>
-    );
-  }
+function List({ items, emptyMessage = 'Empty List' }) {
+  const listItems = items.length
+    ? items.map(x => <li key={x.title}>{x.title}</li>)
+    : <p>{emptyMessage}</p>;
+
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
 }
 
-export default App;
+export default List;
