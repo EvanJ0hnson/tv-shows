@@ -37,3 +37,24 @@ body {
   font-kerning: normal;
   font-variant-ligatures: common-ligatures;
 }
+
+/*
+ * Input
+ */
+.input {
+  padding: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-m);
+  font-size: inherit;
+}
+
+.input:focus {
+  outline-color: var(--color-border);
+  outline-style: dotted;
+  outline-width: 1px;
+  outline-offset: 1px;
+}
