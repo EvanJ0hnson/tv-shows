@@ -21,6 +21,10 @@ class SearchableList extends Component {
     });
   }
 
+  componentWillReceiveProps({ items } = {}) {
+    this.setState({ items });
+  }
+
   render() {
     return (
       <div>
