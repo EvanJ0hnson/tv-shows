@@ -9,14 +9,15 @@ const getShows = async () => {
   let shows = [];
 
   try {
-    shows = JSON.parse(localStorage.getItem('shows'))
-  } catch (e) {
-    const response = await fetch('https://api.tvmaze.com/shows');
-    shows = await response.json();
-
-    localStorage.setItem('shows', JSON.stringify(shows))
+    shows = JSON.parse(localStorage.getItem('shows'));
+  } finally {
+    if (!shows) {
+      const response = await fetch('https://api.tvmaze.com/shows');
+      shows = await response.json();
+    
+      localStorage.setItem('shows', JSON.stringify(shows))
+    }
   }
-
 
   return shows;
 }
