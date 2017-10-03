@@ -15,7 +15,7 @@ class SearchableList extends Component {
 
   searchItem(query) {
     return query.length
-      ? this.props.items.filter(x => x.title.toLocaleLowerCase().indexOf(query) >= 0)
+      ? this.props.items.filter(x => x.name.toLocaleLowerCase().indexOf(query) >= 0)
       : this.props.items;
   }
 
