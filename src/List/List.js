@@ -7,7 +7,7 @@ import './List.css'
 function List({ items, emptyMessage = 'Empty List' }) {
   const listItems = items.length
     ? items.map(item =>
-        <li className="list__item" key={item.title}>
+        <li className="list__item" key={item.id}>
           <Show item={item} />
         </li>
       )
