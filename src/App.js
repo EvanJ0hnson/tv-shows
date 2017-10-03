@@ -5,7 +5,34 @@ import OnAir from './OnAir/OnAir';
 
 import './App.css';
 
+const getShows = async () => {
+  let shows = [];
+
+  try {
+    shows = JSON.parse(localStorage.getItem('shows'))
+  } catch (e) {
+    const response = await fetch('https://api.tvmaze.com/shows');
+    shows = await response.json();
+
+    localStorage.setItem('shows', JSON.stringify(shows))
+  }
+
+
+  return shows;
+}
+
 class App extends Component {
+  state = {
+    shows: [],
+    myShows: [],
+  }
+
+  async componentDidMount() {
+    const shows = await getShows();
+
+    this.setState(() => ({ shows }));
+  }
+
   render() {
     return (
       <div>
@@ -14,8 +41,8 @@ class App extends Component {
         </header>
 
         <main>
-          <OnAir />
-          <AddShow />
+          <OnAir items={this.state.myShows} />
+          <AddShow items={this.state.shows} />
         </main>
 
         <footer>
