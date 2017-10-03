@@ -2,24 +2,29 @@ import React from 'react';
 
 import './Show.css';
 
-function Show({ item }) {
+const Show = ({ item }) => {
   return (
     <div className="tv-show-card">
       <header>
-        <h3>{item.title}</h3>
+        <h3>{item.name}</h3>
       </header>
 
       <main>
         <img
           className="tv-show-card__poster"
-          src={item.image}
-          alt={`Poster: ${item.title}`}
+          src={item.image && item.image.medium}
+          alt={`Poster: ${item.name}`}
           width="85px"
           height="125px"
-          title={item.title}
+          title={item.name}
         />
 
-        <p>{item.plot}</p>
+        <p
+          className="tv-show-card__summary"
+          dangerouslySetInnerHTML={{ __html: item.summary }}></p>
+        <p>
+          {item.schedule.time} <span>@</span> {item.schedule.days[0]} 
+        </p>
         <p>
           <span>Last Episode:</span> {item.next}
         </p>

@@ -1,31 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import List from '../List/List'
 
 const title = 'OnAir';
-const items = [{
-  title: 'Item 1',
-  plot: 'plot…',
-  prev: 'prev',
-  next: 'next',
-}, {
-  title: 'Item 2',
-  plot: 'plot…',
-  prev: 'prev',
-  next: 'next',
-}];
 
-class AddShow extends Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h2>{title}</h2>
-        </header>
+const OnAir = ({ items }) => (
+  <div>
+    <h2>{title}</h2>
 
-        <List items={items} />
-      </div>
-    );
-  }
-}
+    <List items={items} />
+  </div>
+);
 
-export default AddShow;
+OnAir.propTypes = {
+  items: PropTypes.array.isRequired,
+};
+
+export default OnAir;

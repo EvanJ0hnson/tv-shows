@@ -22,6 +22,14 @@
 
 .tv-show-card__poster {
   border-radius: var(--border-radius-s);
+
+  box-shadow: 0 1px 20px 5px rgba(0, 0, 0, 0.15);
+}
+
+.tv-show-card__summary {
+  max-height: 10rem;
+
+  overflow: auto;
 }
 
 .tv-show-card__button {
