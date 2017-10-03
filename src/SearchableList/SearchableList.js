@@ -2,15 +2,9 @@ import React, { Component } from 'react';
 import List from '../List/List'
 
 class SearchableList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      items: this.props.items,
-      emptyMessage: this.props.emptyMessage || 'No Items Found'
-    };
-
-    this.handleChange = this.handleChange.bind(this);
+  state = {
+    items: this.props.items,
+    emptyMessage: this.props.emptyMessage || 'No Items Found'
   }
 
   searchItem(query) {
@@ -19,7 +13,7 @@ class SearchableList extends Component {
       : this.props.items;
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const searchQuery = event.target.value.toLowerCase();
 
     this.setState({
