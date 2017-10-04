@@ -19,9 +19,12 @@ const Show = ({ item }) => {
           title={item.name}
         />
 
-        <p
-          className="tv-show-card__summary"
-          dangerouslySetInnerHTML={{ __html: item.summary }}></p>
+        <div className="tv-show-card__summary-wrapper">
+          <p
+            className="tv-show-card__summary"
+            dangerouslySetInnerHTML={{ __html: item.summary }}
+          ></p>
+        </div>
         <p>
           {item.schedule.time} <span>@</span> {item.schedule.days[0]} 
         </p>
