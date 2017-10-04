@@ -14,6 +14,14 @@ const getShows = async () => {
     if (!shows) {
       const response = await fetch('https://api.tvmaze.com/shows');
       shows = await response.json();
+
+      shows = shows.map(({ image, ...show }) => ({
+        ...show,
+        image: {
+          medium: image.medium.replace('http://', 'https://'),
+          original: image.original.replace('http://', 'https://'),
+        },
+      }));
     
       localStorage.setItem('shows', JSON.stringify(shows))
     }
