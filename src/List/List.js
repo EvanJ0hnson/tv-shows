@@ -1,5 +1,7 @@
 import React from 'react';
 
+import withPagination from '../withPagination/withPagination'
+
 import Show from '../Show/Show';
 
 import './List.css'
@@ -20,4 +22,4 @@ function List({ items, emptyMessage = 'Empty List' }) {
   );
 }
 
-export default List;
+export default withPagination(List);
