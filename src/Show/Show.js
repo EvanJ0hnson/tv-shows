@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 
 import './Show.css';
 
-const Show = ({ handleAddShow, item }) => {
+/**
+ * @exports
+ */
+export const Show = ({ handleAddShow, item }) => {
   return (
     <div className="tv-show-card">
       <header>

@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Show from './Show';
+import { Show } from './Show';
 
 const item = {
   title: 'Item 1',
   plot: 'plot…',
   prev: 'prev',
   next: 'next',
+  schedule: {
+    days: [],
+  },
 };
 
 it('<Show> renders without crashing', () => {
