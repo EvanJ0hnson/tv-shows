@@ -30,36 +30,23 @@
   position: relative;
 }
 
-.tv-show-card__summary-wrapper::before {
-  position: absolute;
-
-  top: 0;
-
-  width: 100%;
-  height: .5rem;
-  
-  content: "";
-
-  background-image: linear-gradient(to bottom, var(--color-body), transparent);
-}
-
 .tv-show-card__summary-wrapper::after {
   position: absolute;
 
   bottom: 0;
 
   width: 100%;
-  height: .5rem;
+  height: 1rem;
   
   content: "";
 
-  background-image: linear-gradient(to bottom, transparent, var(--color-body));
+  background-image: linear-gradient(rgba(255, 255, 255, 0), var(--color-body));
 }
 
 .tv-show-card__summary {
   max-height: 10rem;
 
-  overflow: auto;
+  overflow: hidden;
 }
 
 .tv-show-card__button {

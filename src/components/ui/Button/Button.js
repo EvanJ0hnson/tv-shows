@@ -23,7 +23,7 @@ const SButton = styled.button`
   color: white;
   background-color: var(--color-secondary);
 
-  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, opacity;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-function);
 
@@ -46,6 +46,9 @@ const SButton = styled.button`
 
   &:disabled {
     background-color: var(--color-secondary);
+
+    box-shadow: none;
+
     opacity: .25;
     cursor: not-allowed;
   }
