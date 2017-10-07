@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import AddShow from './AddShow/AddShow';
 import OnAir from './OnAir/OnAir';
@@ -33,7 +34,6 @@ const getShows = async () => {
 class App extends Component {
   state = {
     shows: [],
-    myShows: [],
   }
 
   async componentDidMount() {
@@ -50,7 +50,7 @@ class App extends Component {
         </header>
 
         <main>
-          <OnAir items={this.state.myShows} />
+          <OnAir items={this.props.myShows} />
           <AddShow items={this.state.shows} />
         </main>
 
@@ -62,4 +62,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({ myShows: state.data })
+)(App);
