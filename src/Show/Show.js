@@ -1,8 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Show.css';
 
-const Show = ({ item }) => {
+/**
+ * @exports
+ */
+export const Show = ({ handleAddShow, item }) => {
   return (
     <div className="tv-show-card">
       <header>
@@ -37,10 +41,19 @@ const Show = ({ item }) => {
         <button
           className="tv-show-card__button"
           title={`Add ${item.title} to the list`}
+          onClick={handleAddShow}
         >+</button>
       </main>
     </div>
   )
 }
 
-export default Show;
+/**
+ * @exports default
+ */
+export default connect(
+  null,
+  (dispatch, ownProps) => ({
+    handleAddShow: () => dispatch({ type: 'ADD_SHOW', payload: ownProps.item }),
+  })
+)(Show);
