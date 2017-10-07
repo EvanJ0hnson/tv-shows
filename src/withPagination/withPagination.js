@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Button from '../components/ui/Button';
+
 /**
  * @desc HOC withPagination
  */
@@ -56,16 +58,14 @@ const withPagination = WrappedComponent => class Pagination extends Component {
 
     return (
       <div>
-        <button
-          type="button"
+        <Button
           onClick={this.prevPage}
           disabled={this.state.firstPage}
-        >← Prev</button>
-        <button
-          type="button"
+        >← Prev</Button>
+        <Button
           onClick={this.nextPage}
           disabled={this.state.lastPage}
-        >Next →</button>
+        >Next →</Button>
 
         <WrappedComponent {...this.props} items={visibleItems} />
       </div>
