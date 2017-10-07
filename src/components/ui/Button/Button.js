@@ -46,6 +46,9 @@ const SButton = styled.button`
 
   &:disabled {
     background-color: var(--color-secondary);
+
+    box-shadow: none;
+
     opacity: .25;
     cursor: not-allowed;
   }
